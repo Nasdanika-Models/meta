@@ -1,0 +1,267 @@
+@Ecore(nsURI="https://meta.models.nasdanika.org", nsPrefix="org.nasdanika.models.meta")
+@GenModel(
+	modelDirectory="/model/src-gen",
+    featureDelegation="Dynamic",
+    complianceLevel="25",
+    suppressGenModelAnnotations="false",
+    copyrightFields="false",
+    operationReflection="true",
+    importOrganizing="true"
+)
+package org.nasdanika.models.meta
+
+import org.nasdanika.models.nxcore.NamedElement
+import org.nasdanika.models.nxcore.StringToStringMapEntry
+
+annotation "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+annotation "http://www.eclipse.org/emf/2002/GenModel" as GenModel
+annotation "urn:org.nasdanika" as Nasdanika
+
+/*
+ * Base of everything. Inherits name, documentation-as-structure and nested
+ * markers from nxcore - markers are what let a Class say which XSD element or
+ * which JDBC table it was loaded from, which is the whole provenance story.
+ */
+abstract class ModelElement extends NamedElement {
+    /*
+     * Everything a source language expressed that this model does not. Loaders
+     * put what they cannot map here rather than dropping it silently, so a
+     * round trip back to the source stays possible even though this model is a
+     * projection.
+     */
+    contains Annotation[] annotations
+}
+
+/*
+ * Source-keyed extra data, the same bargain Ecore's EAnnotation makes. The
+ * source is a URI naming whoever owns the details, so two loaders never collide.
+ */
+class Annotation extends ModelElement {
+    /* URI identifying the owner, e.g. urn:org.nasdanika or the source schema. */
+    String source
+    contains StringToStringMapEntry[] details
+}
+
+/* ---------------------------------------------------------------------------
+ * Structure
+ * --------------------------------------------------------------------------- */
+
+/*
+ * A namespace of classifiers, and the unit of publication - one Package becomes
+ * one npm package and one Maven artifact.
+ *
+ * There are no subpackages, by design: nesting exists in Ecore and XSD but adds
+ * a dimension that neither TypeScript modules nor npm packages need. A loader
+ * flattens, recording the original path in an Annotation.
+ */
+class Package extends ModelElement {
+    /* Namespace URI - the identity of this package, and what a reference resolves against. */
+    String namespace
+    /* Short prefix, for qualified names and generated identifiers. */
+    String prefix
+    /* Version of the package this model describes, e.g. 2026.9.0. */
+    String version
+    contains Classifier[] classifiers
+}
+
+abstract class Classifier extends ModelElement {
+    /*
+     * Generics. Declared here rather than on Class alone so that a DataType may
+     * be parameterized too - which is what a loader needs for List<T> style
+     * source types.
+     */
+    contains TypeParameter[] typeParameters
+}
+
+/*
+ * A type with features. Covers what Ecore calls EClass, what Java calls a class
+ * or interface, and what JSON Schema calls an object schema.
+ *
+ * There is no separate `interface` flag. Whether a Class is realized as a
+ * TypeScript interface, a type alias or a class is a decision for the
+ * projection, not a property of the model.
+ */
+class Class extends Classifier {
+    boolean ^abstract
+    /*
+     * Supertypes as TypeReferences rather than plain references, because a
+     * supertype may be parameterized: Repository<Account, string>.
+     */
+    contains TypeReference[] superTypes
+    contains Feature[] features
+    contains Operation[] operations
+}
+
+/*
+ * A scalar type with a name of its own: Instant, Duration, EmailAddress.
+ *
+ * `representation` is how it crosses the wire and is what a projection emits -
+ * an Instant is a string. `sourceType` records where it came from and is
+ * provenance only.
+ */
+class DataType extends Classifier {
+    PrimitiveKind representation
+    /* Fully qualified type in the source language, e.g. java.time.Instant. */
+    String sourceType
+}
+
+class Enum extends Classifier {
+    contains EnumLiteral[] literals
+}
+
+class EnumLiteral extends ModelElement {
+    /*
+     * The serialized form. Unset means the name is used, which is what EMF JSON
+     * and most schema languages do.
+     */
+    String value
+    /* Position, for sources whose enums are ordinal-valued. */
+    int ordinal
+}
+
+/* ---------------------------------------------------------------------------
+ * Typed elements
+ * --------------------------------------------------------------------------- */
+
+/*
+ * Anything with a type and a multiplicity: a feature, an operation's return, a
+ * parameter.
+ */
+abstract class TypedElement extends ModelElement {
+    contains TypeReference ^type
+    /* 0 means optional. */
+    int lowerBound
+    /* 1 is single valued, -1 is unbounded. */
+    int upperBound = "1"
+    boolean ^ordered = "true"
+    boolean ^unique
+}
+
+/*
+ * State. Named Feature rather than StructuralFeature because there is no other
+ * kind here - the "structural" qualifier only earns its keep in Ecore, where it
+ * distinguishes features from operations on a common supertype.
+ */
+abstract class Feature extends TypedElement {
+    /*
+     * Computed rather than stored. Not serialized, and a projection emits it
+     * read only or omits it - a reflective loader cannot supply a value for it.
+     */
+    boolean ^derived
+    /* Emitted as readonly. Positive form of Ecore's `changeable`. */
+    boolean ^readonly
+    /* Verbatim default, in the serialized form of the type. */
+    String defaultValue
+}
+
+class Attribute extends Feature {
+    /*
+     * This attribute identifies its instance, and a reference may cite it.
+     * Not named `id`: nxcore's StringIdentity already contributes one.
+     */
+    boolean identifying
+}
+
+class Reference extends Feature {
+    /* The target is owned by this object: a tree edge rather than a graph edge. */
+    boolean containment
+    /* The other end of a bidirectional reference. */
+    refers Reference ^opposite
+    /*
+     * Attributes that identify a target within the containing list, which is
+     * what turns a positional path into //@members[id='lea'].
+     */
+    refers Attribute[] ^keys
+}
+
+/*
+ * Behaviour signature. Carried for fidelity when loading from Java or Ecore and
+ * rendered as documentation; a reflective runtime cannot implement it, so a
+ * projection emits it only when something else supplies the body.
+ */
+class Operation extends TypedElement {
+    contains TypeParameter[] typeParameters
+    contains Parameter[] parameters
+    /*
+     * Declared exceptions. TypeScript has no equivalent, so this does not
+     * project - it survives as a JSDoc @throws and as provenance for languages
+     * that do have checked exceptions.
+     */
+    contains TypeReference[] exceptions
+}
+
+class Parameter extends TypedElement {
+    /* Collects the remaining arguments: ...args. Must be last. */
+    boolean variadic
+    String defaultValue
+}
+
+/* ---------------------------------------------------------------------------
+ * Types
+ * --------------------------------------------------------------------------- */
+
+class TypeParameter extends ModelElement {
+    /* The `extends` constraint. */
+    contains TypeReference bound
+    contains TypeReference ^default
+}
+
+/*
+ * A type in a type position. Small on purpose: enough to write a declaration,
+ * with OpaqueTypeReference as the release valve.
+ */
+abstract class TypeReference extends ModelElement {
+}
+
+/*
+ * Reference to a Classifier. `target` is set within a model; `namespace` plus
+ * `classifierName` name one in a package this model does not contain, which is
+ * what lets a package be loaded and projected on its own.
+ */
+class ClassifierReference extends TypeReference {
+    refers Classifier target
+    String namespace
+    String classifierName
+    contains TypeReference[] typeArguments
+}
+
+class TypeParameterReference extends TypeReference {
+    refers TypeParameter target
+    /* Name, for when the parameter is declared outside the loaded fragment. */
+    String parameterName
+}
+
+class PrimitiveTypeReference extends TypeReference {
+    PrimitiveKind kind
+}
+
+/*
+ * One of several. Present because JSON Schema oneOf, XSD choice and TypeScript
+ * unions are all the same shape, and because optionality alone cannot express
+ * them.
+ */
+class UnionTypeReference extends TypeReference {
+    contains TypeReference[] types
+}
+
+/*
+ * Verbatim type text for what no class here covers - conditional and mapped
+ * types, tuples, intersections. `references` keeps the named types visible to a
+ * projection's import resolver, so opaque text does not silently break import
+ * management.
+ */
+class OpaqueTypeReference extends TypeReference {
+    String text
+    contains TypeReference[] references
+}
+
+/*
+ * How a value crosses the wire. Deliberately a serialization vocabulary rather
+ * than a language one: NUMBER covers every numeric width, because JSON has one
+ * number and TypeScript has one number.
+ */
+enum PrimitiveKind {
+    STRING NUMBER BOOLEAN BIGINT
+    DATE TIME DATE_TIME DURATION
+    BINARY ANY NULL VOID
+}

@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.nasdanika</groupId>
+		<artifactId>parent</artifactId>
+		<version>2026.9.0</version>
+		<relativePath>../../poms/parent</relativePath>
+	</parent>	
+	<groupId>org.nasdanika.models.meta</groupId>
+	<artifactId>parent</artifactId>
+	<!--<version>2026.9.0</version>-->
+	<packaging>pom</packaging>
+	<name>Nasdanika Meta Model</name>
+	<description>Meta model, resource and resource factory</description>
+	<url>https://meta.models.nasdanika.org/</url>
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License 2.0</name>
+			<url>https://nasdanika.org/builds/master/eclipse-public-license-2.0.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/Nasdanika-Models/meta</url>
+	</scm>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.nasdanika</groupId>
+				<artifactId>bom</artifactId>
+				<version>${project.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>model</module>
+	</modules>
+</project>
