@@ -120,6 +120,18 @@ estate.ManagedClass extends meta.Class, Workable, Governed    // stewardship
 
 Same object rather than a side table, so nothing needs joining, and the weight is paid only by consumers who take the specialization.
 
+The sharper form of the same move is **re-declaration under the same name**, which the [role](https://role.models.nasdanika.org/) floor already does:
+
+```
+class Content extends nxcore.Content, Undergoer {}    // content with roles: author, editor
+class Section extends nxcore.Section, Undergoer {}    // sections too
+```
+
+Empty bodies, same simple names, one cheap class per element per floor. What it buys is that **on this floor and above, `Content` means the one with roles**, and a consumer never has to know that documentation arrives from nxcore and roles from the role floor. The name is the whole point: the derived class is a subtype, so nothing is hidden and every existing `Content` reference stays true, but the floor has decided what the word means locally. 
+
+This convention pays for itself twice over in projections, which is argued at length in the [Cypher assessment](../cypher/assessment.md): it gives a flattening projection a **named class to cut the supertype chain at**, where otherwise the natural cut point is "nxcore `Content` together with `Undergoer`", an intersection with no name, and it pre-chooses the label so that no generator has to invent one.
+
+
 What that buys is worth stating concretely, because it is the difference between a schema and a domain model.
 
 **A subject matter expert can talk for half an hour about the lifecycle of a merchant attribute on a credit card transaction.** When it is populated and by which system. What its values meant before the 2019 migration. Which downstream report breaks when it is null. Who to ask when it looks wrong. Which of the three systems that write it is authoritative on a Tuesday.
@@ -131,6 +143,26 @@ With ownership from [role](https://role.models.nasdanika.org/), stages from [lif
 > Set up the meeting. Capture the transcript. Ask an agent to update the spreadsheet. Publish.
 
 The attribute gains an owner, a lifecycle stage, and a paragraph that says what it means. The next person to ask gets the answer from the model rather than from the expert's memory - and so does the next agent.
+
+### Flattening, and the member clashes it forces
+
+Inheritance is how the model is authored. It is not always how the model is consumed. A TypeScript interface, a JSON Schema for a tool call, and a prompt summary handed to an agent all read better as a **flat** class: every inherited feature and operation inlined, so nothing has to walk the supertypes to learn what an object has.
+
+That is a **model-to-model transformation in this model**, not a trick inside each emitter. The input is a `Package`, the output is a `Package` whose `Class`es declare everything they had inherited, and every copied `Feature` carries a nested marker back to the class that declared it. So the flattening is testable by diffing, reusable by every projection, and auditable, which a template expansion inside a generator is none of.
+
+Flattening is where composition stops being free. Ecore rejects duplicate feature names across a class's full inherited set, so no single well-formed `.ecore` contains the problem. This model does, because composition across independently authored sources is its job: a higher-floor class extending a base class *and* aspect mixins, or a class loaded from Java and enriched from an XSD, can end up with two features named `source` and different types. Three consequences, and only the first is cosmetic:
+
+- **Most same-name encounters are not clashes.** A feature reached twice through a diamond is one feature, which the mixin arrangement produces constantly since the aspects and the base both descend from nxcore, and an operation redeclared with the same signature is an override. Dedupe by feature identity, not by name, and keep the most derived override.
+- **Same name, genuinely different declarations, is a clash and must be resolved by renaming**, deterministically, with the most derived declaration keeping the name and the rename recorded on the feature. A rename that exists only in emitted output is a silent divergence from the model.
+- **The renaming has to happen here rather than downstream**, because TypeScript refuses an interface extending two interfaces that declare a member incompatibly, and a strict tool schema has no room for the `allOf` composition that would otherwise carry it. One resolution, computed once, consumed by every target.
+
+Flattening is also what lets a projection **cut the supertype chain** at a re-declared class, which is where the token economy actually comes from. Once `Content` declares the documentation it inherited from nxcore and the roles it inherited from `Undergoer`, a consumer can be shown one `Content` and told neither: nothing is lost except the attribution, and the attribution is still in the model, on the marker. That is the rule this readme already states one section up, applied at presentation time rather than at model design time - an agent should not pay for lifecycle vocabulary in its context window on every call, and it should not pay for the base classes that vocabulary hangs on either.
+
+A projection can compact further by dropping features a consumer does not need, and there are two quite different reasons to drop one. A model may **not track** something the metamodel supports, which is an editorial decision about the model, durable and worth recording as an `Annotation` on the `Feature`: `INCLUDE`, `EXCLUDE`, `INCLUDE_IF_SET`, defaulting to `INCLUDE`. Or a particular dataset may simply not populate it, which is a measurement rather than a decision.
+
+The boundary between those two is worth marking, because it is easy to breach and expensive to find afterwards. **The cut and the policy are functions of the schema; population is a function of the contents.** The first two produce a legal `Package` that anything may generate from. The second produces a summary of one afternoon's data, and the moment it is materialized as a `Package` somebody will emit TypeScript from it.
+
+What the cut must not do is erase distinctions. `Man` and `Woman` still extend `Person`, and a graph projection carries every retained supertype as a label, so `Person` and `Woman` are both true of the same object. Removing an ancestor's *name* is recoverable by widening the cut; replacing a class by its ancestor removes a distinction and is not recoverable by anything, which is also how a generated write path loses the concrete class it needed to instantiate.
 
 ## Federated, in version control
 
