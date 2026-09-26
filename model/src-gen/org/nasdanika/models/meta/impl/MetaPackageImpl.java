@@ -911,7 +911,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__GetContainer() {
+	public EOperation getObject__GetIdentities() {
 		return objectEClass.getEOperations().get(0);
 	}
 
@@ -920,7 +920,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__GetContainmentFeature() {
+	public EOperation getObject__GetContainer() {
 		return objectEClass.getEOperations().get(1);
 	}
 
@@ -929,7 +929,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Get__Feature() {
+	public EOperation getObject__GetContainmentFeature() {
 		return objectEClass.getEOperations().get(2);
 	}
 
@@ -938,7 +938,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Get__Feature_int_int() {
+	public EOperation getObject__Get__Feature() {
 		return objectEClass.getEOperations().get(3);
 	}
 
@@ -947,7 +947,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Set__Feature_Object() {
+	public EOperation getObject__Get__Feature_int_int() {
 		return objectEClass.getEOperations().get(4);
 	}
 
@@ -956,7 +956,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Set__Feature_Object_int() {
+	public EOperation getObject__Set__Feature_Object() {
 		return objectEClass.getEOperations().get(5);
 	}
 
@@ -965,7 +965,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Add__Feature_Object_int() {
+	public EOperation getObject__Set__Feature_Object_int() {
 		return objectEClass.getEOperations().get(6);
 	}
 
@@ -974,7 +974,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Remove__Feature_Object() {
+	public EOperation getObject__Add__Feature_Object_int() {
 		return objectEClass.getEOperations().get(7);
 	}
 
@@ -983,7 +983,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Remove__Feature_Object_int() {
+	public EOperation getObject__Remove__Feature_Object() {
 		return objectEClass.getEOperations().get(8);
 	}
 
@@ -992,7 +992,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Unset__Feature() {
+	public EOperation getObject__Remove__Feature_Object_int() {
 		return objectEClass.getEOperations().get(9);
 	}
 
@@ -1001,7 +1001,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Size__Feature() {
+	public EOperation getObject__Unset__Feature() {
 		return objectEClass.getEOperations().get(10);
 	}
 
@@ -1010,7 +1010,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__Invoke__Operation_EList() {
+	public EOperation getObject__Size__Feature() {
 		return objectEClass.getEOperations().get(11);
 	}
 
@@ -1019,7 +1019,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__GetIncomingReferences__EList() {
+	public EOperation getObject__Invoke__Operation_EList() {
 		return objectEClass.getEOperations().get(12);
 	}
 
@@ -1028,7 +1028,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__GetIncomingReferences__EList_int_int() {
+	public EOperation getObject__GetIncomingReferences__EList() {
 		return objectEClass.getEOperations().get(13);
 	}
 
@@ -1037,7 +1037,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__GetIncomingReferenceCount__EList() {
+	public EOperation getObject__GetIncomingReferences__EList_int_int() {
 		return objectEClass.getEOperations().get(14);
 	}
 
@@ -1046,8 +1046,17 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObject__IsResolved() {
+	public EOperation getObject__GetIncomingReferenceCount__EList() {
 		return objectEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__IsResolved() {
+		return objectEClass.getEOperations().get(16);
 	}
 
 	/**
@@ -1214,6 +1223,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 		objectEClass = createEClass(OBJECT);
 		createEReference(objectEClass, OBJECT__TYPE);
 		createEReference(objectEClass, OBJECT__ANNOTATIONS);
+		createEOperation(objectEClass, OBJECT___GET_IDENTITIES);
 		createEOperation(objectEClass, OBJECT___GET_CONTAINER);
 		createEOperation(objectEClass, OBJECT___GET_CONTAINMENT_FEATURE);
 		createEOperation(objectEClass, OBJECT___GET__FEATURE);
@@ -1386,6 +1396,8 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 		initEClass(objectEClass, org.nasdanika.models.meta.Object.class, "Object", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getObject_Type(), this.getClass_(), null, "type", null, 0, 1, org.nasdanika.models.meta.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObject_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, org.nasdanika.models.meta.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getObject__GetIdentities(), theEcorePackage.getEJavaObject(), "getIdentities", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getObject__GetContainer(), this.getObject(), "getContainer", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
@@ -1723,6 +1735,12 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 		   source,
 		   new String[] {
 			   "documentation", " ---------------------------------------------------------------------------\nInstances\n\nThe M1 layer. Until now this model described types and had no way to express\nan instance of one, which made \"metacircular by construction\" true at M2 and\nuseless at M1: a vocabulary could say that Measure is a Class and had nowhere\nto put the measures.\n\nPURELY REFLECTIVE, which is the whole difference from EObject. There is no\ngenerated interface per Class, no implementation class, no factory. An Object\nknows its type by reference and answers about itself through six operations.\nThat is what makes it portable: a browser gets instances without a code\ngenerator, and an agent gets an interaction surface it can be taught in a\nparagraph.\n\nIMPLEMENTED BY PROJECTING TO ECORE. This model already generates a dynamic\nEPackage, so the obvious runtime is dynamic EMF instances behind this\ninterface: EMF does resources, serialization, change recording and proxy\nresolution, and callers see six operations instead of thirty. The cost to\nwatch is a wrapper per object on a large model, so the Ecore-backed\nimplementation should be an adapter cached per instance, or dynamic EMF should\nimplement this interface directly.\n\nWHAT IS DELIBERATELY ABSENT, and the rule that keeps it absent: an operation\nbelongs here only if a consumer cannot compute it from the others plus the\ntype WITHOUT LOADING DATA IT DID NOT ASK FOR. Contents are derivable from the\ntype\'s containment references plus get, so there is no contents operation, and\na caller wanting contents wants the data anyway. Adapters, notification and\nchange recording belong to an implementation, not to this surface. Proxy\nresolution is discussed on the resolved operation below and is the one place\nthis surface deliberately hides something real.\n\nThe second clause of that rule is load bearing and was added late. It is what\nadmits size and indexed get, and it is narrow on purpose: \"this would be\nfaster as a primitive\" is not a reason, \"this cannot be answered without\nfetching a thousand objects to count them\" is.\n---------------------------------------------------------------------------"
+		   });
+		addAnnotation
+		  (getObject__GetIdentities(),
+		   source,
+		   new String[] {
+			   "documentation", "*\nObject identities - zero or more.\nA value object has no identity, an entity has one or more"
 		   });
 		addAnnotation
 		  (getObject__Get__Feature(),

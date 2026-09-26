@@ -3856,13 +3856,22 @@ public interface MetaPackage extends EPackage {
 	int OBJECT_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Get Identities</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET_IDENTITIES = 0;
+
+	/**
 	 * The operation id for the '<em>Get Container</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___GET_CONTAINER = 0;
+	int OBJECT___GET_CONTAINER = 1;
 
 	/**
 	 * The operation id for the '<em>Get Containment Feature</em>' operation.
@@ -3871,7 +3880,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___GET_CONTAINMENT_FEATURE = 1;
+	int OBJECT___GET_CONTAINMENT_FEATURE = 2;
 
 	/**
 	 * The operation id for the '<em>Get</em>' operation.
@@ -3880,7 +3889,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___GET__FEATURE = 2;
+	int OBJECT___GET__FEATURE = 3;
 
 	/**
 	 * The operation id for the '<em>Get</em>' operation.
@@ -3889,7 +3898,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___GET__FEATURE_INT_INT = 3;
+	int OBJECT___GET__FEATURE_INT_INT = 4;
 
 	/**
 	 * The operation id for the '<em>Set</em>' operation.
@@ -3898,7 +3907,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___SET__FEATURE_OBJECT = 4;
+	int OBJECT___SET__FEATURE_OBJECT = 5;
 
 	/**
 	 * The operation id for the '<em>Set</em>' operation.
@@ -3907,7 +3916,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___SET__FEATURE_OBJECT_INT = 5;
+	int OBJECT___SET__FEATURE_OBJECT_INT = 6;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -3916,7 +3925,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___ADD__FEATURE_OBJECT_INT = 6;
+	int OBJECT___ADD__FEATURE_OBJECT_INT = 7;
 
 	/**
 	 * The operation id for the '<em>Remove</em>' operation.
@@ -3925,7 +3934,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___REMOVE__FEATURE_OBJECT = 7;
+	int OBJECT___REMOVE__FEATURE_OBJECT = 8;
 
 	/**
 	 * The operation id for the '<em>Remove</em>' operation.
@@ -3934,7 +3943,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___REMOVE__FEATURE_OBJECT_INT = 8;
+	int OBJECT___REMOVE__FEATURE_OBJECT_INT = 9;
 
 	/**
 	 * The operation id for the '<em>Unset</em>' operation.
@@ -3943,7 +3952,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___UNSET__FEATURE = 9;
+	int OBJECT___UNSET__FEATURE = 10;
 
 	/**
 	 * The operation id for the '<em>Size</em>' operation.
@@ -3952,7 +3961,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___SIZE__FEATURE = 10;
+	int OBJECT___SIZE__FEATURE = 11;
 
 	/**
 	 * The operation id for the '<em>Invoke</em>' operation.
@@ -3961,7 +3970,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___INVOKE__OPERATION_ELIST = 11;
+	int OBJECT___INVOKE__OPERATION_ELIST = 12;
 
 	/**
 	 * The operation id for the '<em>Get Incoming References</em>' operation.
@@ -3970,7 +3979,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___GET_INCOMING_REFERENCES__ELIST = 12;
+	int OBJECT___GET_INCOMING_REFERENCES__ELIST = 13;
 
 	/**
 	 * The operation id for the '<em>Get Incoming References</em>' operation.
@@ -3979,7 +3988,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___GET_INCOMING_REFERENCES__ELIST_INT_INT = 13;
+	int OBJECT___GET_INCOMING_REFERENCES__ELIST_INT_INT = 14;
 
 	/**
 	 * The operation id for the '<em>Get Incoming Reference Count</em>' operation.
@@ -3988,7 +3997,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___GET_INCOMING_REFERENCE_COUNT__ELIST = 14;
+	int OBJECT___GET_INCOMING_REFERENCE_COUNT__ELIST = 15;
 
 	/**
 	 * The operation id for the '<em>Is Resolved</em>' operation.
@@ -3997,7 +4006,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT___IS_RESOLVED = 15;
+	int OBJECT___IS_RESOLVED = 16;
 
 	/**
 	 * The number of operations of the '<em>Object</em>' class.
@@ -4006,7 +4015,7 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_OPERATION_COUNT = 16;
+	int OBJECT_OPERATION_COUNT = 17;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.meta.impl.IncomingReferenceImpl <em>Incoming Reference</em>}' class.
@@ -4821,6 +4830,16 @@ public interface MetaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getObject_Annotations();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#getIdentities() <em>Get Identities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Identities</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#getIdentities()
+	 * @generated
+	 */
+	EOperation getObject__GetIdentities();
 
 	/**
 	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#getContainer() <em>Get Container</em>}' operation.
@@ -5661,6 +5680,14 @@ public interface MetaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OBJECT__ANNOTATIONS = eINSTANCE.getObject_Annotations();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Identities</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET_IDENTITIES = eINSTANCE.getObject__GetIdentities();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Container</b></em>' operation.

@@ -112,6 +112,17 @@ public class ObjectImpl extends MinimalEObjectImpl.Container implements org.nasd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Object> getIdentities() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public org.nasdanika.models.meta.Object getContainer() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -377,6 +388,8 @@ public class ObjectImpl extends MinimalEObjectImpl.Container implements org.nasd
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case MetaPackage.OBJECT___GET_IDENTITIES:
+				return getIdentities();
 			case MetaPackage.OBJECT___GET_CONTAINER:
 				return getContainer();
 			case MetaPackage.OBJECT___GET_CONTAINMENT_FEATURE:

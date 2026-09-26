@@ -118,6 +118,19 @@ public interface Object extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * Object identities - zero or more.
+	 * A value object has no identity, an entity has one or more
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false"
+	 * @generated
+	 */
+	EList<java.lang.Object> getIdentities();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation" unique="false"
 	 * @generated
 	 */
