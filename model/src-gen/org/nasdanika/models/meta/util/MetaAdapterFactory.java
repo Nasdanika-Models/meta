@@ -16,6 +16,7 @@ import org.nasdanika.models.meta.ClassifierReference;
 import org.nasdanika.models.meta.DataType;
 import org.nasdanika.models.meta.EnumLiteral;
 import org.nasdanika.models.meta.Feature;
+import org.nasdanika.models.meta.IncomingReference;
 import org.nasdanika.models.meta.MetaPackage;
 import org.nasdanika.models.meta.ModelElement;
 import org.nasdanika.models.meta.OpaqueTypeReference;
@@ -174,6 +175,14 @@ public class MetaAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOpaqueTypeReference(OpaqueTypeReference object) {
 				return createOpaqueTypeReferenceAdapter();
+			}
+			@Override
+			public Adapter caseObject(org.nasdanika.models.meta.Object object) {
+				return createObjectAdapter();
+			}
+			@Override
+			public Adapter caseIncomingReference(IncomingReference object) {
+				return createIncomingReferenceAdapter();
 			}
 			@Override
 			public Adapter caseReferrable(Referrable object) {
@@ -510,6 +519,34 @@ public class MetaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOpaqueTypeReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.meta.Object <em>Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.meta.Object
+	 * @generated
+	 */
+	public Adapter createObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.meta.IncomingReference <em>Incoming Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.meta.IncomingReference
+	 * @generated
+	 */
+	public Adapter createIncomingReferenceAdapter() {
 		return null;
 	}
 

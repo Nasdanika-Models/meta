@@ -14,6 +14,7 @@ import org.nasdanika.models.meta.ClassifierReference;
 import org.nasdanika.models.meta.DataType;
 import org.nasdanika.models.meta.EnumLiteral;
 import org.nasdanika.models.meta.Feature;
+import org.nasdanika.models.meta.IncomingReference;
 import org.nasdanika.models.meta.MetaPackage;
 import org.nasdanika.models.meta.ModelElement;
 import org.nasdanika.models.meta.OpaqueTypeReference;
@@ -377,6 +378,18 @@ public class MetaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MetaPackage.OBJECT: {
+				org.nasdanika.models.meta.Object object = (org.nasdanika.models.meta.Object)theEObject;
+				T result = caseObject(object);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MetaPackage.INCOMING_REFERENCE: {
+				IncomingReference incomingReference = (IncomingReference)theEObject;
+				T result = caseIncomingReference(incomingReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -693,6 +706,36 @@ public class MetaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOpaqueTypeReference(OpaqueTypeReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObject(org.nasdanika.models.meta.Object object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Incoming Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Incoming Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIncomingReference(IncomingReference object) {
 		return null;
 	}
 

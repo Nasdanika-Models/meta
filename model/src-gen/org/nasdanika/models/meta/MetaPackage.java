@@ -5,6 +5,7 @@ package org.nasdanika.models.meta;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -3818,6 +3819,251 @@ public interface MetaPackage extends EPackage {
 	int OPAQUE_TYPE_REFERENCE_OPERATION_COUNT = TYPE_REFERENCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.nasdanika.models.meta.impl.ObjectImpl <em>Object</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.meta.impl.ObjectImpl
+	 * @see org.nasdanika.models.meta.impl.MetaPackageImpl#getObject()
+	 * @generated
+	 */
+	int OBJECT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT__TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT__ANNOTATIONS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Get Container</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET_CONTAINER = 0;
+
+	/**
+	 * The operation id for the '<em>Get Containment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET_CONTAINMENT_FEATURE = 1;
+
+	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET__FEATURE = 2;
+
+	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET__FEATURE_INT_INT = 3;
+
+	/**
+	 * The operation id for the '<em>Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___SET__FEATURE_OBJECT = 4;
+
+	/**
+	 * The operation id for the '<em>Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___SET__FEATURE_OBJECT_INT = 5;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___ADD__FEATURE_OBJECT_INT = 6;
+
+	/**
+	 * The operation id for the '<em>Remove</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___REMOVE__FEATURE_OBJECT = 7;
+
+	/**
+	 * The operation id for the '<em>Remove</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___REMOVE__FEATURE_OBJECT_INT = 8;
+
+	/**
+	 * The operation id for the '<em>Unset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___UNSET__FEATURE = 9;
+
+	/**
+	 * The operation id for the '<em>Size</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___SIZE__FEATURE = 10;
+
+	/**
+	 * The operation id for the '<em>Invoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___INVOKE__OPERATION_ELIST = 11;
+
+	/**
+	 * The operation id for the '<em>Get Incoming References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET_INCOMING_REFERENCES__ELIST = 12;
+
+	/**
+	 * The operation id for the '<em>Get Incoming References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET_INCOMING_REFERENCES__ELIST_INT_INT = 13;
+
+	/**
+	 * The operation id for the '<em>Get Incoming Reference Count</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___GET_INCOMING_REFERENCE_COUNT__ELIST = 14;
+
+	/**
+	 * The operation id for the '<em>Is Resolved</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT___IS_RESOLVED = 15;
+
+	/**
+	 * The number of operations of the '<em>Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_OPERATION_COUNT = 16;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.meta.impl.IncomingReferenceImpl <em>Incoming Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.meta.impl.IncomingReferenceImpl
+	 * @see org.nasdanika.models.meta.impl.MetaPackageImpl#getIncomingReference()
+	 * @generated
+	 */
+	int INCOMING_REFERENCE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_REFERENCE__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_REFERENCE__REFERENCE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_REFERENCE__INDEX = 2;
+
+	/**
+	 * The number of structural features of the '<em>Incoming Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_REFERENCE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Incoming Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_REFERENCE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.nasdanika.models.meta.PrimitiveKind <em>Primitive Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3825,7 +4071,7 @@ public interface MetaPackage extends EPackage {
 	 * @see org.nasdanika.models.meta.impl.MetaPackageImpl#getPrimitiveKind()
 	 * @generated
 	 */
-	int PRIMITIVE_KIND = 21;
+	int PRIMITIVE_KIND = 23;
 
 
 	/**
@@ -4545,6 +4791,241 @@ public interface MetaPackage extends EPackage {
 	EReference getOpaqueTypeReference_References();
 
 	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.meta.Object <em>Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Object</em>'.
+	 * @see org.nasdanika.models.meta.Object
+	 * @generated
+	 */
+	EClass getObject();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.meta.Object#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see org.nasdanika.models.meta.Object#getType()
+	 * @see #getObject()
+	 * @generated
+	 */
+	EReference getObject_Type();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.meta.Object#getAnnotations <em>Annotations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
+	 * @see org.nasdanika.models.meta.Object#getAnnotations()
+	 * @see #getObject()
+	 * @generated
+	 */
+	EReference getObject_Annotations();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#getContainer() <em>Get Container</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Container</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#getContainer()
+	 * @generated
+	 */
+	EOperation getObject__GetContainer();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#getContainmentFeature() <em>Get Containment Feature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Containment Feature</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#getContainmentFeature()
+	 * @generated
+	 */
+	EOperation getObject__GetContainmentFeature();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#get(org.nasdanika.models.meta.Feature) <em>Get</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#get(org.nasdanika.models.meta.Feature)
+	 * @generated
+	 */
+	EOperation getObject__Get__Feature();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#get(org.nasdanika.models.meta.Feature, int, int) <em>Get</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#get(org.nasdanika.models.meta.Feature, int, int)
+	 * @generated
+	 */
+	EOperation getObject__Get__Feature_int_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#set(org.nasdanika.models.meta.Feature, java.lang.Object) <em>Set</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#set(org.nasdanika.models.meta.Feature, java.lang.Object)
+	 * @generated
+	 */
+	EOperation getObject__Set__Feature_Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#set(org.nasdanika.models.meta.Feature, java.lang.Object, int) <em>Set</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#set(org.nasdanika.models.meta.Feature, java.lang.Object, int)
+	 * @generated
+	 */
+	EOperation getObject__Set__Feature_Object_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#add(org.nasdanika.models.meta.Feature, java.lang.Object, int) <em>Add</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#add(org.nasdanika.models.meta.Feature, java.lang.Object, int)
+	 * @generated
+	 */
+	EOperation getObject__Add__Feature_Object_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#remove(org.nasdanika.models.meta.Feature, org.nasdanika.models.meta.Object) <em>Remove</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#remove(org.nasdanika.models.meta.Feature, org.nasdanika.models.meta.Object)
+	 * @generated
+	 */
+	EOperation getObject__Remove__Feature_Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#remove(org.nasdanika.models.meta.Feature, org.nasdanika.models.meta.Object, int) <em>Remove</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#remove(org.nasdanika.models.meta.Feature, org.nasdanika.models.meta.Object, int)
+	 * @generated
+	 */
+	EOperation getObject__Remove__Feature_Object_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#unset(org.nasdanika.models.meta.Feature) <em>Unset</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Unset</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#unset(org.nasdanika.models.meta.Feature)
+	 * @generated
+	 */
+	EOperation getObject__Unset__Feature();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#size(org.nasdanika.models.meta.Feature) <em>Size</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Size</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#size(org.nasdanika.models.meta.Feature)
+	 * @generated
+	 */
+	EOperation getObject__Size__Feature();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#invoke(org.nasdanika.models.meta.Operation, org.eclipse.emf.common.util.EList) <em>Invoke</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Invoke</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#invoke(org.nasdanika.models.meta.Operation, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getObject__Invoke__Operation_EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#getIncomingReferences(org.eclipse.emf.common.util.EList) <em>Get Incoming References</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Incoming References</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#getIncomingReferences(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getObject__GetIncomingReferences__EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#getIncomingReferences(org.eclipse.emf.common.util.EList, int, int) <em>Get Incoming References</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Incoming References</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#getIncomingReferences(org.eclipse.emf.common.util.EList, int, int)
+	 * @generated
+	 */
+	EOperation getObject__GetIncomingReferences__EList_int_int();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#getIncomingReferenceCount(org.eclipse.emf.common.util.EList) <em>Get Incoming Reference Count</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Incoming Reference Count</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#getIncomingReferenceCount(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getObject__GetIncomingReferenceCount__EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.meta.Object#isResolved() <em>Is Resolved</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Resolved</em>' operation.
+	 * @see org.nasdanika.models.meta.Object#isResolved()
+	 * @generated
+	 */
+	EOperation getObject__IsResolved();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.meta.IncomingReference <em>Incoming Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Incoming Reference</em>'.
+	 * @see org.nasdanika.models.meta.IncomingReference
+	 * @generated
+	 */
+	EClass getIncomingReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.meta.IncomingReference#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.nasdanika.models.meta.IncomingReference#getSource()
+	 * @see #getIncomingReference()
+	 * @generated
+	 */
+	EReference getIncomingReference_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.meta.IncomingReference#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reference</em>'.
+	 * @see org.nasdanika.models.meta.IncomingReference#getReference()
+	 * @see #getIncomingReference()
+	 * @generated
+	 */
+	EReference getIncomingReference_Reference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.meta.IncomingReference#getIndex <em>Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Index</em>'.
+	 * @see org.nasdanika.models.meta.IncomingReference#getIndex()
+	 * @see #getIncomingReference()
+	 * @generated
+	 */
+	EAttribute getIncomingReference_Index();
+
+	/**
 	 * Returns the meta object for enum '{@link org.nasdanika.models.meta.PrimitiveKind <em>Primitive Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5154,6 +5635,194 @@ public interface MetaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPAQUE_TYPE_REFERENCE__REFERENCES = eINSTANCE.getOpaqueTypeReference_References();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.meta.impl.ObjectImpl <em>Object</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.meta.impl.ObjectImpl
+		 * @see org.nasdanika.models.meta.impl.MetaPackageImpl#getObject()
+		 * @generated
+		 */
+		EClass OBJECT = eINSTANCE.getObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBJECT__TYPE = eINSTANCE.getObject_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBJECT__ANNOTATIONS = eINSTANCE.getObject_Annotations();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Container</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET_CONTAINER = eINSTANCE.getObject__GetContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Containment Feature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET_CONTAINMENT_FEATURE = eINSTANCE.getObject__GetContainmentFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Get</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET__FEATURE = eINSTANCE.getObject__Get__Feature();
+
+		/**
+		 * The meta object literal for the '<em><b>Get</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET__FEATURE_INT_INT = eINSTANCE.getObject__Get__Feature_int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Set</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___SET__FEATURE_OBJECT = eINSTANCE.getObject__Set__Feature_Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Set</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___SET__FEATURE_OBJECT_INT = eINSTANCE.getObject__Set__Feature_Object_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Add</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___ADD__FEATURE_OBJECT_INT = eINSTANCE.getObject__Add__Feature_Object_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___REMOVE__FEATURE_OBJECT = eINSTANCE.getObject__Remove__Feature_Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___REMOVE__FEATURE_OBJECT_INT = eINSTANCE.getObject__Remove__Feature_Object_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Unset</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___UNSET__FEATURE = eINSTANCE.getObject__Unset__Feature();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___SIZE__FEATURE = eINSTANCE.getObject__Size__Feature();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoke</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___INVOKE__OPERATION_ELIST = eINSTANCE.getObject__Invoke__Operation_EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Incoming References</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET_INCOMING_REFERENCES__ELIST = eINSTANCE.getObject__GetIncomingReferences__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Incoming References</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET_INCOMING_REFERENCES__ELIST_INT_INT = eINSTANCE.getObject__GetIncomingReferences__EList_int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Incoming Reference Count</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___GET_INCOMING_REFERENCE_COUNT__ELIST = eINSTANCE.getObject__GetIncomingReferenceCount__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Resolved</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OBJECT___IS_RESOLVED = eINSTANCE.getObject__IsResolved();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.meta.impl.IncomingReferenceImpl <em>Incoming Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.meta.impl.IncomingReferenceImpl
+		 * @see org.nasdanika.models.meta.impl.MetaPackageImpl#getIncomingReference()
+		 * @generated
+		 */
+		EClass INCOMING_REFERENCE = eINSTANCE.getIncomingReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INCOMING_REFERENCE__SOURCE = eINSTANCE.getIncomingReference_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INCOMING_REFERENCE__REFERENCE = eINSTANCE.getIncomingReference_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INCOMING_REFERENCE__INDEX = eINSTANCE.getIncomingReference_Index();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.meta.PrimitiveKind <em>Primitive Kind</em>}' enum.

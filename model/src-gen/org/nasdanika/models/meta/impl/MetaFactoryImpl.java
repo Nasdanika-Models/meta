@@ -16,6 +16,7 @@ import org.nasdanika.models.meta.Attribute;
 import org.nasdanika.models.meta.ClassifierReference;
 import org.nasdanika.models.meta.DataType;
 import org.nasdanika.models.meta.EnumLiteral;
+import org.nasdanika.models.meta.IncomingReference;
 import org.nasdanika.models.meta.MetaFactory;
 import org.nasdanika.models.meta.MetaPackage;
 import org.nasdanika.models.meta.OpaqueTypeReference;
@@ -88,6 +89,8 @@ public class MetaFactoryImpl extends EFactoryImpl implements MetaFactory {
 			case MetaPackage.PRIMITIVE_TYPE_REFERENCE: return createPrimitiveTypeReference();
 			case MetaPackage.UNION_TYPE_REFERENCE: return createUnionTypeReference();
 			case MetaPackage.OPAQUE_TYPE_REFERENCE: return createOpaqueTypeReference();
+			case MetaPackage.OBJECT: return createObject();
+			case MetaPackage.INCOMING_REFERENCE: return createIncomingReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -281,6 +284,26 @@ public class MetaFactoryImpl extends EFactoryImpl implements MetaFactory {
 	public OpaqueTypeReference createOpaqueTypeReference() {
 		OpaqueTypeReferenceImpl opaqueTypeReference = new OpaqueTypeReferenceImpl();
 		return opaqueTypeReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.nasdanika.models.meta.Object createObject() {
+		ObjectImpl object = new ObjectImpl();
+		return object;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IncomingReference createIncomingReference() {
+		IncomingReferenceImpl incomingReference = new IncomingReferenceImpl();
+		return incomingReference;
 	}
 
 	/**

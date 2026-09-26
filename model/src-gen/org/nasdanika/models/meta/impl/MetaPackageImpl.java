@@ -5,6 +5,7 @@ package org.nasdanika.models.meta.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -18,6 +19,7 @@ import org.nasdanika.models.meta.ClassifierReference;
 import org.nasdanika.models.meta.DataType;
 import org.nasdanika.models.meta.EnumLiteral;
 import org.nasdanika.models.meta.Feature;
+import org.nasdanika.models.meta.IncomingReference;
 import org.nasdanika.models.meta.MetaFactory;
 import org.nasdanika.models.meta.MetaPackage;
 import org.nasdanika.models.meta.ModelElement;
@@ -188,6 +190,20 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * @generated
 	 */
 	private EClass opaqueTypeReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass objectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass incomingReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -868,6 +884,213 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getObject() {
+		return objectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getObject_Type() {
+		return (EReference)objectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getObject_Annotations() {
+		return (EReference)objectEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__GetContainer() {
+		return objectEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__GetContainmentFeature() {
+		return objectEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Get__Feature() {
+		return objectEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Get__Feature_int_int() {
+		return objectEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Set__Feature_Object() {
+		return objectEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Set__Feature_Object_int() {
+		return objectEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Add__Feature_Object_int() {
+		return objectEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Remove__Feature_Object() {
+		return objectEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Remove__Feature_Object_int() {
+		return objectEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Unset__Feature() {
+		return objectEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Size__Feature() {
+		return objectEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__Invoke__Operation_EList() {
+		return objectEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__GetIncomingReferences__EList() {
+		return objectEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__GetIncomingReferences__EList_int_int() {
+		return objectEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__GetIncomingReferenceCount__EList() {
+		return objectEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getObject__IsResolved() {
+		return objectEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIncomingReference() {
+		return incomingReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIncomingReference_Source() {
+		return (EReference)incomingReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIncomingReference_Reference() {
+		return (EReference)incomingReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIncomingReference_Index() {
+		return (EAttribute)incomingReferenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPrimitiveKind() {
 		return primitiveKindEEnum;
 	}
@@ -987,6 +1210,31 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 		opaqueTypeReferenceEClass = createEClass(OPAQUE_TYPE_REFERENCE);
 		createEAttribute(opaqueTypeReferenceEClass, OPAQUE_TYPE_REFERENCE__TEXT);
 		createEReference(opaqueTypeReferenceEClass, OPAQUE_TYPE_REFERENCE__REFERENCES);
+
+		objectEClass = createEClass(OBJECT);
+		createEReference(objectEClass, OBJECT__TYPE);
+		createEReference(objectEClass, OBJECT__ANNOTATIONS);
+		createEOperation(objectEClass, OBJECT___GET_CONTAINER);
+		createEOperation(objectEClass, OBJECT___GET_CONTAINMENT_FEATURE);
+		createEOperation(objectEClass, OBJECT___GET__FEATURE);
+		createEOperation(objectEClass, OBJECT___GET__FEATURE_INT_INT);
+		createEOperation(objectEClass, OBJECT___SET__FEATURE_OBJECT);
+		createEOperation(objectEClass, OBJECT___SET__FEATURE_OBJECT_INT);
+		createEOperation(objectEClass, OBJECT___ADD__FEATURE_OBJECT_INT);
+		createEOperation(objectEClass, OBJECT___REMOVE__FEATURE_OBJECT);
+		createEOperation(objectEClass, OBJECT___REMOVE__FEATURE_OBJECT_INT);
+		createEOperation(objectEClass, OBJECT___UNSET__FEATURE);
+		createEOperation(objectEClass, OBJECT___SIZE__FEATURE);
+		createEOperation(objectEClass, OBJECT___INVOKE__OPERATION_ELIST);
+		createEOperation(objectEClass, OBJECT___GET_INCOMING_REFERENCES__ELIST);
+		createEOperation(objectEClass, OBJECT___GET_INCOMING_REFERENCES__ELIST_INT_INT);
+		createEOperation(objectEClass, OBJECT___GET_INCOMING_REFERENCE_COUNT__ELIST);
+		createEOperation(objectEClass, OBJECT___IS_RESOLVED);
+
+		incomingReferenceEClass = createEClass(INCOMING_REFERENCE);
+		createEReference(incomingReferenceEClass, INCOMING_REFERENCE__SOURCE);
+		createEReference(incomingReferenceEClass, INCOMING_REFERENCE__REFERENCE);
+		createEAttribute(incomingReferenceEClass, INCOMING_REFERENCE__INDEX);
 
 		// Create enums
 		primitiveKindEEnum = createEEnum(PRIMITIVE_KIND);
@@ -1135,6 +1383,73 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 		initEAttribute(getOpaqueTypeReference_Text(), theEcorePackage.getEString(), "text", null, 0, 1, OpaqueTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOpaqueTypeReference_References(), this.getTypeReference(), null, "references", null, 0, -1, OpaqueTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(objectEClass, org.nasdanika.models.meta.Object.class, "Object", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getObject_Type(), this.getClass_(), null, "type", null, 0, 1, org.nasdanika.models.meta.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getObject_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, org.nasdanika.models.meta.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getObject__GetContainer(), this.getObject(), "getContainer", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getObject__GetContainmentFeature(), this.getFeature(), "getContainmentFeature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		EOperation op = initEOperation(getObject__Get__Feature(), theEcorePackage.getEJavaObject(), "get", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Get__Feature_int_int(), theEcorePackage.getEJavaObject(), "get", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "from", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "count", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Set__Feature_Object(), null, "set", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEJavaObject(), "value", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Set__Feature_Object_int(), null, "set", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEJavaObject(), "value", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "index", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Add__Feature_Object_int(), null, "add", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEJavaObject(), "value", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "index", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Remove__Feature_Object(), null, "remove", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getObject(), "value", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Remove__Feature_Object_int(), null, "remove", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getObject(), "value", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "index", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Unset__Feature(), null, "unset", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Size__Feature(), theEcorePackage.getEInt(), "size", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getFeature(), "feature", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__Invoke__Operation_EList(), this.getObject(), "invoke", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getOperation(), "operation", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEJavaObject(), "arguments", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__GetIncomingReferences__EList(), this.getIncomingReference(), "getIncomingReferences", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getReference(), "references", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__GetIncomingReferences__EList_int_int(), this.getIncomingReference(), "getIncomingReferences", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getReference(), "references", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "from", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEInt(), "count", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getObject__GetIncomingReferenceCount__EList(), theEcorePackage.getEInt(), "getIncomingReferenceCount", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getReference(), "references", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getObject__IsResolved(), theEcorePackage.getEBoolean(), "isResolved", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEClass(incomingReferenceEClass, IncomingReference.class, "IncomingReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIncomingReference_Source(), this.getObject(), null, "source", null, 0, 1, IncomingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncomingReference_Reference(), this.getReference(), null, "reference", null, 0, 1, IncomingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIncomingReference_Index(), theEcorePackage.getEInt(), "index", "-1", 0, 1, IncomingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(primitiveKindEEnum, PrimitiveKind.class, "PrimitiveKind");
 		addEEnumLiteral(primitiveKindEEnum, PrimitiveKind.STRING);
@@ -1239,7 +1554,7 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 		  (classEClass,
 		   source,
 		   new String[] {
-			   "documentation", "A type with features. Covers what Ecore calls EClass, what Java calls a class\nor interface, and what JSON Schema calls an object schema.\n\nThere is no separate `interface` flag. Whether a Class is realized as a\nTypeScript interface, a type alias or a class is a decision for the\nprojection, not a property of the model."
+			   "documentation", "A type with features. Covers what Ecore calls EClass, what Java calls a class\nor interface, and what JSON Schema calls an object schema.\n\nThere is no separate `interface` flag. Whether a Class is realized as a\nTypeScript interface, a type alias or a class is a decision for the\nprojection, not a property of the model.\n\nFLATTENING is a transformation over this model rather than a feature of it:\nit produces a Package whose Classes declare their inherited features and\noperations directly, each copied Feature carrying a nested marker back to\nthe class that declared it. Consumers that want a flat class - JSON Schema\ntool schemas, agent-facing summaries - take the flattened model; consumers\nthat want inheritance take the original.\n\nFlattening is what makes CUTTING the supertype chain lossless: once a Class\ndeclares what it inherited, a projection may stop naming the ancestors it\ncame from without the consumer losing anything but the attribution, which\nthe markers still carry. Subclasses are never collapsed into a supertype -\nremoving an ancestor\'s name is recoverable by widening the cut, removing a\ndistinction is not.\n\nFlattening is where member clashes have to be resolved: two supertypes\ncontributing the same feature name with different types. Most same-name\nencounters are not clashes - a feature reached twice through a diamond is\none feature, so dedupe by identity rather than by name - and for what is\nleft, the most derived\ndeclaration keeps the name, the other is renamed deterministically, and the\nrename is recorded on the feature as an Annotation, since it is a fact about\na transformation rather than about the domain. Resolving it here rather than in each\nemitter is not a preference: TypeScript will not compile an interface\nextending two interfaces that declare a member incompatibly, so the\nalternative is every target inventing its own spelling of the same fix."
 		   });
 		addAnnotation
 		  (getClass_SuperTypes(),
@@ -1402,6 +1717,90 @@ public class MetaPackageImpl extends EPackageImpl implements MetaPackage {
 		   source,
 		   new String[] {
 			   "documentation", "How a value crosses the wire. Deliberately a serialization vocabulary rather\nthan a language one: NUMBER covers every numeric width, because JSON has one\nnumber and TypeScript has one number."
+		   });
+		addAnnotation
+		  (objectEClass,
+		   source,
+		   new String[] {
+			   "documentation", " ---------------------------------------------------------------------------\nInstances\n\nThe M1 layer. Until now this model described types and had no way to express\nan instance of one, which made \"metacircular by construction\" true at M2 and\nuseless at M1: a vocabulary could say that Measure is a Class and had nowhere\nto put the measures.\n\nPURELY REFLECTIVE, which is the whole difference from EObject. There is no\ngenerated interface per Class, no implementation class, no factory. An Object\nknows its type by reference and answers about itself through six operations.\nThat is what makes it portable: a browser gets instances without a code\ngenerator, and an agent gets an interaction surface it can be taught in a\nparagraph.\n\nIMPLEMENTED BY PROJECTING TO ECORE. This model already generates a dynamic\nEPackage, so the obvious runtime is dynamic EMF instances behind this\ninterface: EMF does resources, serialization, change recording and proxy\nresolution, and callers see six operations instead of thirty. The cost to\nwatch is a wrapper per object on a large model, so the Ecore-backed\nimplementation should be an adapter cached per instance, or dynamic EMF should\nimplement this interface directly.\n\nWHAT IS DELIBERATELY ABSENT, and the rule that keeps it absent: an operation\nbelongs here only if a consumer cannot compute it from the others plus the\ntype WITHOUT LOADING DATA IT DID NOT ASK FOR. Contents are derivable from the\ntype\'s containment references plus get, so there is no contents operation, and\na caller wanting contents wants the data anyway. Adapters, notification and\nchange recording belong to an implementation, not to this surface. Proxy\nresolution is discussed on the resolved operation below and is the one place\nthis surface deliberately hides something real.\n\nThe second clause of that rule is load bearing and was added late. It is what\nadmits size and indexed get, and it is narrow on purpose: \"this would be\nfaster as a primitive\" is not a reason, \"this cannot be answered without\nfetching a thousand objects to count them\" is.\n---------------------------------------------------------------------------"
+		   });
+		addAnnotation
+		  (getObject__Get__Feature(),
+		   source,
+		   new String[] {
+			   "documentation", "For a many-valued feature the result is a list. Whether that list is live\nis an implementation decision, and this surface says it is not: mutation\ngoes through set, add, remove and unset, because a live list leaking out\nof a getter is awkward in Java and worse in TypeScript."
+		   });
+		addAnnotation
+		  (getObject__Get__Feature_int_int(),
+		   source,
+		   new String[] {
+			   "documentation", "A range of a many-valued feature, without materializing the rest.\n\nThe completion of size, on the same grounds and satisfying them better\nthan the indexed get an earlier draft had: size alone tells a caller a\nfeature holds a thousand values and leaves fetching them costing all\nthousand, and a one-at-a-time get fixes the data volume and not the round\ntrips. This REPLACES indexed get rather than joining it, because\nget(f, i, 1) is the indexed case and a convenience wrapper belongs in a\nutility rather than on a surface meant to be taught in a paragraph.\n\n`count` is a maximum. Fewer values are returned near the end rather than\nan error, because every paging API that throws on an overlong final page\nis a paging API whose callers write the same clamping loop.\n\nOFFSET PAGING ASSUMES A STABLE ORDER, which is worth saying because this\nmodel makes order optional: TypedElement carries `ordered`, and over a\nfeature that is not ordered, or over data changing underneath the caller,\npage two may repeat or skip what page one returned. That is the ordinary\noffset-versus-cursor problem and it is not solved here. It is solved where\nit belongs, by paging against a snapshot with a freshness policy rather\nthan against a live source."
+		   });
+		addAnnotation
+		  (getObject__Unset__Feature(),
+		   source,
+		   new String[] {
+			   "documentation", "Restores the unset state, which is not the same as setting a default.\n\nKept as its own operation rather than folded into set, because set with a\nnull value says nothing coherent about a many-valued feature, and unset is\nthe one spelling that works for both cardinalities."
+		   });
+		addAnnotation
+		  (getObject__Size__Feature(),
+		   source,
+		   new String[] {
+			   "documentation", "How many values a feature holds. Zero for unset, and for a single-valued\nfeature the answer is only ever zero or one.\n\nTHIS REPLACES A SEPARATE isSet, which an earlier draft had. Under\nmultiplicity semantics `size == 0` and \"not set\" are the same statement,\nfor both cardinalities, so carrying both operations would mean carrying\ntwo vocabularies for one fact. EMF reaches the same place from the other\ndirection: eIsSet on a many-valued feature is already defined as \"the list\nis not empty\". Nothing is lost here because this model has no unsettable\nflag, so there is no third state to distinguish.\n\nIt is also the first operation admitted on COST rather than on\nexpressiveness, and the grounds are narrow: size is computable from get,\nbut only by materializing a list the caller did not ask for, which for a\nlazily loaded containment or a remote surface is the whole expense. The\nrule the surface is held to therefore reads: an operation belongs here\nonly if a consumer cannot compute it from the others without loading data\nit did not ask for.\n\nAnd it is the runtime counterpart to lowerBound and upperBound on\nTypedElement, which is what makes multiplicity validation reflective:\nchecking a feature is size between its bounds, rather than fetching\neverything to count it."
+		   });
+		addAnnotation
+		  (getObject__Invoke__Operation_EList(),
+		   source,
+		   new String[] {
+			   "documentation", "Where the implementation comes from is not this model\'s business. In this\necosystem it resolves through the capability framework, which is the same\nmechanism a tool catalog uses to bind an operation."
+		   });
+		addAnnotation
+		  (getObject__GetIncomingReferences__EList(),
+		   source,
+		   new String[] {
+			   "documentation", "Objects referencing this one, the reference they do it through, and the\nposition within it.\n\nNot derivable from anything else, which is why it is here rather than in a\nutility: an object cannot see its own referrers without something\nmaintaining a reverse index.\n\nFILTERED BY REFERENCE, because the alternative is fetching every referrer\nand discarding most of them, which is the pushdown problem from the graph\nprovider contract arriving one layer down. Filtering by reference is the\nminimal predicate every implementation can honour, and it is exactly what\na Cypher pattern like <-[:owns]- needs.\n\nAn empty or null array means all references. The single-reference and\nno-argument flavours are conveniences and belong in a utility, for the\nsame reason a one-element range get does: the array form subsumes them.\n\nREAD ONLY, and deliberately. Incoming references are DERIVED. They change\nwhen the referring object\'s feature changes, and offering a mutator here\nwould be a second way to perform the same edit with different provenance,\nwhich is how two views of one fact stop agreeing.\n\nNot on an agent\'s surface, though the capability is. An agent reaches this\nthrough <-[...]- in a query, which is the same thing with better\nergonomics. This is the substrate; a query language is the presentation,\nthe same split a tool definition makes between what can be called and how\nit is offered."
+		   });
+		addAnnotation
+		  (getObject__GetIncomingReferences__EList_int_int(),
+		   source,
+		   new String[] {
+			   "documentation", " A page of them. Same contract as the range get above: count is a maximum."
+		   });
+		addAnnotation
+		  (getObject__GetIncomingReferenceCount__EList(),
+		   source,
+		   new String[] {
+			   "documentation", "How many, or -1 when the question cannot be answered here.\n\nThe -1 is the load bearing part. A reverse index is not always available:\na lazily loaded or remote model may have no way to know who points at an\nobject without loading everything. Returning zero in that case would be\nindistinguishable from \"nobody references this\", which is the failure the\nloaders already have a rule against, and -1 for \"no idea\" is the\nconvention the graph provider\'s cardinality estimate already uses.\n\nIt therefore does double duty as the capability check, and costs no extra\noperation to do it."
+		   });
+		addAnnotation
+		  (getObject__IsResolved(),
+		   source,
+		   new String[] {
+			   "documentation", "False when this object stands for one that has not been loaded.\n\nThe one concession to proxies. An earlier draft left them out as an EMF\nconcern, and that does not survive the federation claim: references cross\nresources by URI, so something has to represent \"not here yet\". Resolution\nitself stays an implementation concern; what this surface owes a caller is\nthe ability to tell the difference before it reads a feature and gets a\nsurprise."
+		   });
+		addAnnotation
+		  (getObject_Type(),
+		   source,
+		   new String[] {
+			   "documentation", "The type. A REFERENCE rather than a fixed property of the instance, which\nis the single most consequential difference from EObject and from every\nclass-based language.\n\nUnset means untyped, which is a legitimate state rather than an error. See\nthe retyping note below."
+		   });
+		addAnnotation
+		  (getObject_Annotations(),
+		   source,
+		   new String[] {
+			   "documentation", "Values that have no typed home yet, or no typed home at all.\n\nThe same Annotation a loader uses to record what it could not map, used in\nthe other direction. Before an object is classified there is nowhere typed\nto put anything, so elicited data lands here; classification then promotes\nwhat fits into features and leaves the rest where it was. Promotion in one\ndirection, residue in the other, one mechanism."
+		   });
+		addAnnotation
+		  (incomingReferenceEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Who points at an object, through what, and where.\n\nA value rather than a ModelElement: it has no identity of its own, it is not\ndocumented, and it exists only as an answer. Making it an element would\nsuggest it can be stored, and it cannot be: it is derived from the referring\nobject\'s feature and changes when that does."
+		   });
+		addAnnotation
+		  (getIncomingReference_Index(),
+		   source,
+		   new String[] {
+			   "documentation", " Position in a many-valued reference, or -1 when single-valued."
 		   });
 	}
 

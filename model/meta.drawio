@@ -1,6 +1,6 @@
 <mxfile compressed="false" host="Electron">
   <diagram id="d1e814f8-d61c-4e63-a348-5a54c2f11ef1" name="meta">
-    <mxGraphModel dx="3323" dy="2131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="4434" dy="2771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -371,6 +371,14 @@
                 <mxPoint x="1110" y="-240" />
               </Array>
             </mxGeometry>
+          </mxCell>
+        </object>
+        <mxCell id="DKi3WfWDQC0lhfK-FgvN-2" edge="1" parent="1" source="DKi3WfWDQC0lhfK-FgvN-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="cfa71873-0f56-4208-aabc-210484f19266" value="type">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object label="Object" link="references/eClassifiers/Object/index.html" id="DKi3WfWDQC0lhfK-FgvN-1">
+          <mxCell parent="1" vertex="1">
+            <mxGeometry height="30" width="120" x="100" y="-80" as="geometry" />
           </mxCell>
         </object>
       </root>
